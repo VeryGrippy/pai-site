@@ -1,0 +1,9 @@
+{
+  "version": "0.0.0",
+  "channel": "stable",
+  "package_url": "https://YOUR-DOMAIN.example/downloads/PAI-update.zip",
+  "sha256": "REPLACE_WITH_RELEASE_SHA256",
+  "required": false,
+  "release_notes": "No public stable release yet.",
+  "minimum_updater": "6.9.0"
+}

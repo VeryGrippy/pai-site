@@ -1,0 +1,9 @@
+{
+  "version": "6.4.0-alpha.5",
+  "channel": "developer",
+  "package_url": "https://YOUR-DOMAIN.example/downloads/PAI-developer-update.zip",
+  "sha256": "REPLACE_WITH_RELEASE_SHA256",
+  "required": false,
+  "release_notes": "UI simplification and navigation overhaul.",
+  "minimum_updater": "6.4.0-alpha.3"
+}
