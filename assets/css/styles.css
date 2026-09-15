@@ -107,3 +107,5 @@ footer { border-top:1px solid var(--line); margin-top:80px; }.footer{display:fle
 @media (max-width: 560px) {
   .container{width:min(100% - 24px,1160px)}.nav{height:64px}.nav-actions .ghost{display:none}.mockup-body{grid-template-columns:1fr}.mock-sidebar{display:none}.cta{padding:30px}.hero-actions .btn{width:100%}.page-hero{padding-top:56px}
 }
+
+.btn.disabled,[aria-disabled="true"]{opacity:.48;pointer-events:none;cursor:not-allowed;transform:none!important}.release-status{margin:18px 0 0;color:#8f9aaa;font-size:13px}.release-status[data-state="ready"]{color:#85e7c3}.release-status[data-state="warning"]{color:#f2c66d}.release-status[data-state="error"]{color:#f08b8b}

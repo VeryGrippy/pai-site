@@ -1,42 +1,25 @@
-# PAI Website Alpha 1
+# PAI Website — 6.9 Distribution Upgrade
 
-Static website for PAI. No framework or build step is required.
+Static PAI product website. No framework/build step is required.
 
-## Run locally
-Open `index.html`, or run a local static server from this folder:
+## Live release behavior
+The Download page no longer hardcodes a PAI version or installer. It loads the selected channel manifest at runtime. Canonical layout:
 
-```bash
-python -m http.server 8080
-```
+- `developer/latest.json`
+- `beta/latest.json`
+- `stable/latest.json`
 
-Then open `http://localhost:8080`.
+For compatibility, the client also checks `updates/<channel>/latest.json`.
 
-## Publish
-This folder can be deployed directly to Cloudflare Pages, Vercel, Netlify, GitHub Pages, or any ordinary static web host.
+A release manifest should include `version`, `channel`, `package_url`, `sha256`, `installer_url`, and optionally `installer_sha256`, `release_notes`, and updater policy fields.
 
-## Make downloads live
-1. Build/sign the current public installer.
-2. Copy it to `downloads/PAISetup.exe`.
-3. Deploy the website.
+The website uses `installer_url` for new installations. Existing PAI installations use `package_url` through PAI's OTA updater.
 
-All download buttons already point to that path.
+## Publishing
+The PAI Windows release workflow should publish both the versioned update ZIP and versioned installer before updating `latest.json`. This keeps the website synchronized automatically with the release channel.
 
-## 6.9 updater hosting
-The `updates/` directory contains example channel manifests:
+## Local test
+Run `python -m http.server 8080` and open `http://localhost:8080/download.html`. A local checkout without a live channel manifest will intentionally show release service unavailable.
 
-- `updates/stable/latest.json`
-- `updates/beta/latest.json`
-- `updates/developer/latest.json`
-
-Replace the placeholder package URL and SHA-256 when publishing a release. The future PAI updater can query these URLs directly.
-
-## Current editable website version
-Edit `assets/js/site.js` to update:
-
-- current version
-- channel label
-- installer path
-- Windows requirements text
-
-## Before public commercial launch
-Add final domain, privacy policy, terms/EULA, support/contact information, account/login flow, payment/subscription integration, real signed installer, and production update manifests.
+## Production
+The site can be deployed to Cloudflare Pages, Vercel, Netlify, GitHub Pages, or an ordinary HTTPS host. A custom domain can be attached later without changing the release-client design.

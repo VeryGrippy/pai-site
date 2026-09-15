@@ -1,9 +1,0 @@
-{
-  "version": "0.0.0-beta.0",
-  "channel": "beta",
-  "package_url": "https://YOUR-DOMAIN.example/downloads/PAI-beta-update.zip",
-  "sha256": "REPLACE_WITH_RELEASE_SHA256",
-  "required": false,
-  "release_notes": "No public beta release yet.",
-  "minimum_updater": "6.9.0"
-}
