@@ -1,10 +1,9 @@
 {
-  "required": false,
-  "release_notes": "PAI 6.9 distribution, launcher, updater, and OTA publishing.",
-  "version": "6.9.0-alpha.2",
-  "installer_url": "https://verygrippy.github.io/pai-site/developer/PAISetup-6.9.0-alpha.2.exe",
   "channel": "developer",
-  "sha256": "16d7dd0330deefa9819f96b6144d0bf24f012cead5994bb40a2f70239aa51b01",
-  "package_url": "https://verygrippy.github.io/pai-site/developer/PAI-6.9.0-alpha.2-windows-x64.zip",
-  "updater_minimum": "6.0.0-alpha.3"
+  "release_notes": "PAI 6.9 distribution, launcher, updater, and OTA publishing.",
+  "updater_minimum": "6.0.0-alpha.3",
+  "version": "6.9.0-alpha.3",
+  "package_url": "https://verygrippy.github.io/pai-site/developer/PAI-6.9.0-alpha.3-windows-x64.zip",
+  "required": false,
+  "sha256": "8ec3b16fbd7e6f6899ed32ad5b1ea48ae1cd807b614c6be9e7bf7136f8f0b616"
 }
