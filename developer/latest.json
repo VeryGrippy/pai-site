@@ -1,9 +1,9 @@
 {
+  "required": false,
+  "updater_minimum": "6.0.0-alpha.3",
+  "sha256": "ab54246ee4794d02c06deecbb980703da053cfda5001b75ce0f36aa69f6bb8d4",
   "channel": "developer",
   "release_notes": "PAI 6.9 distribution, launcher, updater, and OTA publishing.",
-  "updater_minimum": "6.0.0-alpha.3",
-  "version": "6.9.0-alpha.3",
-  "package_url": "https://verygrippy.github.io/pai-site/developer/PAI-6.9.0-alpha.3-windows-x64.zip",
-  "required": false,
-  "sha256": "8ec3b16fbd7e6f6899ed32ad5b1ea48ae1cd807b614c6be9e7bf7136f8f0b616"
+  "package_url": "https://verygrippy.github.io/pai-site/developer/PAI-PAI 6.9.0 Alpha 4-windows-x64.zip",
+  "version": "PAI 6.9.0 Alpha 4"
 }
