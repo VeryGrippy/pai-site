@@ -72,15 +72,19 @@ async function loadRelease() {
     setText('[data-channel]', CHANNEL_LABELS[manifest.channel] || manifest.channel || CHANNEL_LABELS[channel]);
     setText('[data-release-notes]', manifest.release_notes || 'Current PAI release.');
 
-    const installerUrl = manifest.installer_url;
-    if (!installerUrl) {
-      setStatus('Release is live, but the Windows installer has not been published yet.', 'warning');
-      disableDownloads('Installer not yet published for this release');
+    // Prefer the normal Windows installer. Developer/preview channels may
+    // intentionally publish an updater/package ZIP before an installer exists;
+    // in that case keep the release downloadable instead of disabling the site.
+    const downloadUrl = manifest.installer_url || manifest.package_url;
+    if (!downloadUrl) {
+      setStatus('Release metadata is live, but no downloadable artifact was published.', 'warning');
+      disableDownloads('No downloadable artifact published for this release');
       return;
     }
 
-    const filename = installerUrl.split('/').pop().split('?')[0] || `PAISetup-${manifest.version}.exe`;
-    enableDownloads(installerUrl, filename);
+    const filename = downloadUrl.split('/').pop().split('?')[0]
+      || (manifest.installer_url ? `PAISetup-${manifest.version}.exe` : `PAI-${manifest.version}-windows-x64.zip`);
+    enableDownloads(downloadUrl, filename);
     setStatus(`Current ${CHANNEL_LABELS[manifest.channel] || manifest.channel || 'release'} · ${manifest.version}`, 'ready');
   } catch (error) {
     console.error('PAI release lookup failed:', error);
