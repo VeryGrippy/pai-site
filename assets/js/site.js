@@ -62,7 +62,6 @@ async function loadRelease() {
   setText('[data-requirements]', PAI_SITE.requirements);
   setText('[data-channel]', CHANNEL_LABELS[channel] || channel);
   setStatus('Checking current release…');
-  disableDownloads('Checking current PAI release');
 
   try {
     const { manifest } = await fetchManifest(channel);
@@ -77,8 +76,7 @@ async function loadRelease() {
     // in that case keep the release downloadable instead of disabling the site.
     const downloadUrl = manifest.installer_url || manifest.package_url;
     if (!downloadUrl) {
-      setStatus('Release metadata is live, but no downloadable artifact was published.', 'warning');
-      disableDownloads('No downloadable artifact published for this release');
+      setStatus('Release metadata is live, but the fallback Alpha 5 installer remains available.', 'warning');
       return;
     }
 
@@ -93,9 +91,8 @@ async function loadRelease() {
     setStatus(`Current ${CHANNEL_LABELS[manifest.channel] || manifest.channel || 'release'} · ${manifest.version}`, 'ready');
   } catch (error) {
     console.error('PAI release lookup failed:', error);
-    setText('[data-version]', 'Unavailable');
-    setStatus('Unable to reach the PAI release service. Please try again shortly.', 'error');
-    disableDownloads('Release service unavailable');
+    setText('[data-version]', '6.9.0-alpha.5');
+    setStatus('Live release lookup failed; using the Alpha 5 installer fallback.', 'warning');
   }
 }
 
