@@ -1,8 +1,13 @@
 const PAI_SITE = {
   defaultChannel: "developer",
   requirements: "Windows 10/11 · 64-bit",
+  releaseBaseUrl: "https://verygrippy.github.io/pai-site",
   manifestCandidates(channel) {
-    return [`${channel}/latest.json`, `updates/${channel}/latest.json`];
+    return [
+      `${this.releaseBaseUrl}/${channel}/latest.json`,
+      `${channel}/latest.json`,
+      `updates/${channel}/latest.json`,
+    ];
   },
 };
 
