@@ -25,3 +25,5 @@ Run `python -m http.server 8080` and open `http://localhost:8080/download.html`.
 The site can be deployed to Cloudflare Pages, Vercel, Netlify, GitHub Pages, or an ordinary HTTPS host. A custom domain can be attached later without changing the release-client design.
 
 <!-- cloudflare-deploy-trigger-2026-09-28 -->
+
+<!-- cloudflare-deploy-trigger-after-command-save-2026-09-28 -->
