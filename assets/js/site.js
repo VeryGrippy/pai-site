@@ -83,11 +83,10 @@ async function loadRelease() {
     const filename = downloadUrl.split('/').pop().split('?')[0]
       || (manifest.installer_url ? `PAISetup-${manifest.version}.exe` : `PAI-${manifest.version}-windows-x64.zip`);
 
-    // Release artifacts live inside this site under /<channel>/<filename>.
-    // Use a relative URL so the same build works on GitHub Pages, Vercel,
-    // custom domains, and local previews without depending on one hostname.
-    const localDownloadUrl = `${manifest.channel || channel}/${encodeURIComponent(filename)}`;
-    enableDownloads(localDownloadUrl, filename);
+    // The release manifest contains the canonical published artifact URL.
+    // Use it directly so custom-domain/Vercel deployments do not need to host
+    // the large installer/ZIP themselves.
+    enableDownloads(downloadUrl, filename);
     setStatus(`Current ${CHANNEL_LABELS[manifest.channel] || manifest.channel || 'release'} · ${manifest.version}`, 'ready');
   } catch (error) {
     console.error('PAI release lookup failed:', error);
