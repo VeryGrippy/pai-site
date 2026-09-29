@@ -1,10 +1,10 @@
 {
-  "release_notes": "PAI 6.9 distribution, launcher, updater, and OTA publishing.",
-  "version": "6.9.0-alpha.6",
-  "installer_url": "https://verygrippy.github.io/pai-site/developer/PAISetup-6.9.0-alpha.6.exe",
-  "channel": "developer",
-  "package_url": "https://verygrippy.github.io/pai-site/developer/PAI-6.9.0-alpha.6-windows-x64.zip",
   "required": false,
+  "installer_url": "https://verygrippy.github.io/pai-site/developer/PAISetup-6.9.0-alpha.7.exe",
+  "release_notes": "PAI 6.9 Alpha 7: native PAI-Coder, automatic first-run model/runtime setup, CUDA acceleration, neural voice, and desktop fixes.",
+  "version": "6.9.0-alpha.7",
+  "channel": "developer",
+  "sha256": "65c312c9007b1f48a7eaaab5052381801a494c0e920097039053dd658af4e157",
   "updater_minimum": "6.0.0-alpha.3",
-  "sha256": "db31780377f788aa5813d38cfd13b347dd103ca69023958fc52a4196e3b9395d"
+  "package_url": "https://verygrippy.github.io/pai-site/developer/PAI-6.9.0-alpha.7-windows-x64.zip"
 }
