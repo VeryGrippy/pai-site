@@ -1,5 +1,71 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>PAI Account</title><link rel="icon" href="assets/img/pai-mark.svg"><link rel="stylesheet" href="assets/css/styles.css"></head><body>
 <div class="nav-wrap"><div class="container nav"><a class="brand" href="index.html"><img src="assets/img/pai-mark.svg" alt=""><span>PAI</span></a><nav class="nav-links"><a href="index.html">Home</a><a href="download.html">Download</a><a href="pricing.html">Pricing</a><a class="active" href="account.html">Account</a><a href="docs.html">Docs</a></nav></div></div>
-<main class="container"><section class="page-hero"><span class="eyebrow">PAI Account</span><h1>Sign in to PAI.</h1><p>Your PAI account will keep your plan and Founding Supporter status connected across the website and desktop app.</p></section><section class="account-grid"><div class="price-card"><h2>Account access</h2><div class="account-tabs"><button class="btn primary" id="signin-tab">Sign in</button><button class="btn" id="signup-tab">Create account</button></div><form id="auth-form"><label>Email</label><input class="account-input" id="email" type="email" autocomplete="email" required><label>Password</label><input class="account-input" id="password" type="password" minlength="8" autocomplete="current-password" required><button class="btn primary" type="submit" id="auth-submit">Sign in</button><p class="release-status" id="auth-status"></p></form></div><div class="price-card"><span class="badge">Account status</span><h2 id="account-title">Not signed in</h2><p id="account-email" style="color:var(--muted)">Sign in to view your PAI access.</p><div class="checks" id="entitlements"><span>Free access</span></div><button class="btn primary" id="founder-checkout" hidden>Become a Founding Supporter — $5</button><button class="btn" id="signout" hidden>Sign out</button></div></section></main>
+<main class="container">
+<section class="page-hero account-hero"><span class="eyebrow">PAI Account</span><h1 id="account-hero-title">Sign in to PAI.</h1><p id="account-hero-copy">Your PAI account keeps your access, plan, and Founding Supporter status connected across the website and desktop app.</p></section>
+
+<section id="signed-out-view" class="account-grid">
+  <div class="price-card account-auth-card">
+    <h2>Account access</h2>
+    <p class="account-card-copy">Sign in to your existing PAI account or create one in a few seconds.</p>
+    <div class="account-tabs"><button class="btn primary" id="signin-tab" type="button">Sign in</button><button class="btn" id="signup-tab" type="button">Create account</button></div>
+    <form id="auth-form">
+      <label for="email">Email</label>
+      <input class="account-input" id="email" type="email" autocomplete="email" required>
+      <label for="password">Password</label>
+      <input class="account-input" id="password" type="password" minlength="8" autocomplete="current-password" required>
+      <button class="btn primary" type="submit" id="auth-submit">Sign in</button>
+      <p class="release-status" id="auth-status"></p>
+    </form>
+  </div>
+  <div class="price-card">
+    <span class="badge">Why an account?</span>
+    <h2>Your PAI access in one place.</h2>
+    <div class="checks">
+      <span>Use the same account on the website and desktop app</span>
+      <span>Keep Founding Supporter status permanently tied to your account</span>
+      <span>See your current access tier and benefits</span>
+      <span>Future Pro access will use the same account</span>
+    </div>
+  </div>
+</section>
+
+<section id="signed-in-view" class="account-dashboard" hidden>
+  <div class="account-dashboard-head">
+    <div>
+      <span class="badge" id="account-badge">FREE</span>
+      <h2 id="account-title">Your PAI account</h2>
+      <p id="account-email" class="account-card-copy"></p>
+    </div>
+    <button class="btn" id="signout" type="button">Sign out</button>
+  </div>
+
+  <div class="account-dashboard-grid">
+    <div class="price-card">
+      <span class="eyebrow">Membership</span>
+      <h3 class="account-section-title">Account details</h3>
+      <div class="account-detail-list">
+        <div><span>Email</span><strong id="detail-email">—</strong></div>
+        <div><span>Plan</span><strong id="detail-plan">Free</strong></div>
+        <div><span>Founding Supporter</span><strong id="detail-founder">Not active</strong></div>
+        <div><span>Usage tier</span><strong id="detail-usage">Standard</strong></div>
+      </div>
+    </div>
+
+    <div class="price-card featured" id="founder-card">
+      <span class="badge">Founding Supporter</span>
+      <h3 class="account-section-title">Support PAI development</h3>
+      <p class="account-card-copy" id="founder-copy">A one-time $5 contribution directly supports continued PAI development and permanently adds Founding Supporter status to your account.</p>
+      <div class="checks" id="entitlements">
+        <span>Permanent Founding Supporter recognition</span>
+        <span>Higher usage limits than Free</span>
+        <span>Advanced features and early previews</span>
+        <span>Priority feedback and testing access</span>
+      </div>
+      <button class="btn primary" id="founder-checkout" hidden>Become a Founding Supporter — $5</button>
+      <p class="release-status" id="account-status"></p>
+    </div>
+  </div>
+</section>
+</main>
 <footer><div class="container footer"><span>© <span data-year></span> PAI.</span><div class="footer-links"><a href="pricing.html">Pricing</a><a href="docs.html">Docs</a></div></div></footer>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><script src="assets/js/account.js"></script><script src="assets/js/site.js"></script></body></html>
