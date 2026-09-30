@@ -1,45 +1,25 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>PAI Account Dashboard</title><link rel="icon" href="assets/img/pai-mark.svg"><link rel="stylesheet" href="assets/css/styles.css"></head><body>
-<div class="nav-wrap"><div class="container nav"><a class="brand" href="index.html"><img src="assets/img/pai-mark.svg" alt=""><span>PAI</span></a><nav class="nav-links"><a href="index.html">Home</a><a href="download.html">Download</a><a href="pricing.html">Pricing</a><a class="active" href="account-dashboard.html">Account</a><a href="docs.html">Docs</a></nav></div></div>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#06070a"><title>PAI Account Dashboard</title><meta name="description" content="Manage your PAI account, access, and Founding Supporter status."><link rel="icon" href="assets/img/pai-mark.svg"><link rel="stylesheet" href="assets/css/styles.css"></head><body>
+<div class="nav-wrap"><div class="container nav"><a class="brand" href="index.html"><img src="assets/img/pai-mark.svg" alt="PAI"><span>PAI</span></a><nav class="nav-links" id="site-nav"><a href="index.html">Home</a><a href="download.html">Download</a><a href="pricing.html">Pricing</a><a href="docs.html">Docs</a><a href="changelog.html">Changelog</a></nav><div class="nav-actions"><a class="btn ghost active" href="account-dashboard.html">Account</a><a class="btn primary" href="download.html">Download PAI</a><button class="mobile-toggle" type="button" aria-label="Toggle navigation" aria-controls="site-nav" aria-expanded="false"><span></span><span></span><span></span></button></div></div></div>
 <main class="container">
-<section class="page-hero account-hero"><span class="eyebrow">PAI Account</span><h1>Your PAI account.</h1><p>Manage your access, membership status, and Founding Supporter benefits.</p></section>
+<section class="page-hero"><span class="kicker">Account dashboard</span><h1>Your PAI account.</h1><p>Manage your current access, membership status, and Founding Supporter benefits from one place.</p></section>
 
 <section class="account-dashboard">
-  <div class="account-dashboard-head">
-    <div>
-      <span class="badge" id="account-badge">FREE</span>
-      <h2 id="account-title">Your PAI account</h2>
-      <p id="account-email" class="account-card-copy"></p>
-    </div>
-    <button class="btn" id="signout" type="button">Sign out</button>
-  </div>
+<div class="account-dashboard-head"><div><span class="badge" id="account-badge">FREE</span><h2 id="account-title">Your PAI account</h2><p id="account-email" class="account-card-copy"></p></div><button class="btn" id="signout" type="button">Sign out</button></div>
 
-  <div class="account-dashboard-grid">
-    <div class="price-card">
-      <span class="eyebrow">Membership</span>
-      <h3 class="account-section-title">Account details</h3>
-      <div class="account-detail-list">
-        <div><span>Email</span><strong id="detail-email">—</strong></div>
-        <div><span>Plan</span><strong id="detail-plan">Free</strong></div>
-        <div><span>Founding Supporter</span><strong id="detail-founder">Not active</strong></div>
-        <div><span>Usage tier</span><strong id="detail-usage">Standard</strong></div>
-      </div>
-    </div>
+<div class="account-dashboard-grid">
+<article class="price-card" data-reveal><span class="eyebrow">Membership</span><h3 class="account-section-title">Account details</h3><p class="account-card-copy">Your plan and supporter status are tied to this account and can be used by the PAI desktop application.</p>
+<div class="account-detail-list"><div><span>Email</span><strong id="detail-email">—</strong></div><div><span>Plan</span><strong id="detail-plan">Free</strong></div><div><span>Founding Supporter</span><strong id="detail-founder">Not active</strong></div><div><span>Usage tier</span><strong id="detail-usage">Standard</strong></div></div>
+</article>
 
-    <div class="price-card featured" id="founder-card">
-      <span class="badge">Founding Supporter</span>
-      <h3 class="account-section-title">Support PAI development</h3>
-      <p class="account-card-copy" id="founder-copy">A one-time $5 contribution directly supports continued PAI development and permanently adds Founding Supporter status to your account.</p>
-      <div class="checks" id="entitlements">
-        <span>Permanent Founding Supporter recognition</span>
-        <span>Higher usage limits than Free</span>
-        <span>Advanced features and early previews</span>
-        <span>Priority feedback and testing access</span>
-      </div>
-      <button class="btn primary" id="founder-checkout" hidden>Become a Founding Supporter — $5</button>
-      <p class="release-status" id="account-status"></p>
-    </div>
-  </div>
+<article class="price-card featured" id="founder-card" data-reveal><span class="badge">Founding Supporter</span><h3 class="account-section-title">Support PAI development</h3><p class="account-card-copy" id="founder-copy">A one-time $5 contribution directly supports continued PAI development and permanently adds Founding Supporter status to your account.</p>
+<div class="checks" id="entitlements"><span>Permanent Founding Supporter recognition</span><span>Higher usage limits than Free</span><span>Advanced features and early previews</span><span>Priority feedback and testing access</span></div>
+<button class="btn primary large" id="founder-checkout" hidden>Become a Founding Supporter — $5</button><p class="release-status" id="account-status"></p>
+</article>
+</div>
+
+<div class="release-banner" data-reveal><div><span class="kicker">Desktop connection</span><h3>Your account is built to follow you into PAI.</h3><p>The desktop account client can restore your session securely and read the same server-controlled access state shown here.</p></div><a class="btn" href="download.html">Open download page</a></div>
 </section>
 </main>
-<footer><div class="container footer"><span>© <span data-year></span> PAI.</span><div class="footer-links"><a href="pricing.html">Pricing</a><a href="docs.html">Docs</a></div></div></footer>
+
+<footer><div class="container footer"><div class="footer-brand"><a class="brand" href="index.html"><img src="assets/img/pai-mark.svg" alt="PAI"><span>PAI</span></a><p>An autonomous, local-first software development system built to turn requests into verified code.</p></div><div class="footer-col"><h4>Product</h4><a href="download.html">Download</a><a href="pricing.html">Pricing</a><a href="changelog.html">Changelog</a></div><div class="footer-col"><h4>Learn</h4><a href="docs.html">Documentation</a><a href="docs.html#projects">Projects</a><a href="docs.html#updates">Updates</a></div><div class="footer-col"><h4>Account</h4><a href="account-dashboard.html">Dashboard</a><a href="pricing.html">Founding Supporter</a></div></div><div class="container footer-bottom"><span>© <span data-year></span> PAI. All rights reserved.</span><span>Built for developers who want the work done, not just suggested.</span></div></footer>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><script src="assets/js/account-dashboard.js"></script><script src="assets/js/site.js"></script></body></html>

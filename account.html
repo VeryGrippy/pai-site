@@ -1,34 +1,22 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>PAI Account</title><link rel="icon" href="assets/img/pai-mark.svg"><link rel="stylesheet" href="assets/css/styles.css"></head><body>
-<div class="nav-wrap"><div class="container nav"><a class="brand" href="index.html"><img src="assets/img/pai-mark.svg" alt=""><span>PAI</span></a><nav class="nav-links"><a href="index.html">Home</a><a href="download.html">Download</a><a href="pricing.html">Pricing</a><a class="active" href="account.html">Account</a><a href="docs.html">Docs</a></nav></div></div>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#06070a"><title>PAI Account</title><meta name="description" content="Sign in to your PAI account."><link rel="icon" href="assets/img/pai-mark.svg"><link rel="stylesheet" href="assets/css/styles.css"></head><body>
+<div class="nav-wrap"><div class="container nav"><a class="brand" href="index.html"><img src="assets/img/pai-mark.svg" alt="PAI"><span>PAI</span></a><nav class="nav-links" id="site-nav"><a href="index.html">Home</a><a href="download.html">Download</a><a href="pricing.html">Pricing</a><a href="docs.html">Docs</a><a href="changelog.html">Changelog</a></nav><div class="nav-actions"><a class="btn ghost" href="account.html">Account</a><a class="btn primary" href="download.html">Download PAI</a><button class="mobile-toggle" type="button" aria-label="Toggle navigation" aria-controls="site-nav" aria-expanded="false"><span></span><span></span><span></span></button></div></div></div>
 <main class="container">
-<section class="page-hero account-hero"><span class="eyebrow">PAI Account</span><h1>Sign in to PAI.</h1><p>Your PAI account keeps your access, plan, and Founding Supporter status connected across the website and desktop app.</p></section>
+<section class="page-hero centered"><span class="kicker">PAI account</span><h1>One account.<br><span class="gradient-text">Everything PAI.</span></h1><p>Sign in to keep your PAI access, plan, and Founding Supporter status connected across the website and desktop application.</p></section>
 
 <section class="account-grid">
-  <div class="price-card account-auth-card">
-    <h2>Account access</h2>
-    <p class="account-card-copy">Sign in to your existing PAI account or create one in a few seconds.</p>
-    <div class="account-tabs"><button class="btn primary" id="signin-tab" type="button">Sign in</button><button class="btn" id="signup-tab" type="button">Create account</button></div>
-    <form id="auth-form">
-      <label for="email">Email</label>
-      <input class="account-input" id="email" type="email" autocomplete="email" required>
-      <label for="password">Password</label>
-      <input class="account-input" id="password" type="password" minlength="8" autocomplete="current-password" required>
-      <button class="btn primary" type="submit" id="auth-submit">Sign in</button>
-      <p class="release-status" id="auth-status"></p>
-    </form>
-  </div>
+<div class="price-card account-auth-card" data-reveal>
+<span class="eyebrow">Secure access</span><h2>Welcome to PAI.</h2><p class="account-card-copy">Use your existing account or create one. If you're already signed in, PAI will take you directly to your account dashboard.</p>
+<div class="account-tabs"><button class="btn primary" id="signin-tab" type="button">Sign in</button><button class="btn" id="signup-tab" type="button">Create account</button></div>
+<form id="auth-form"><label for="email">Email</label><input class="account-input" id="email" type="email" autocomplete="email" required><label for="password">Password</label><input class="account-input" id="password" type="password" minlength="8" autocomplete="current-password" required><button class="btn primary large" type="submit" id="auth-submit">Sign in</button><p class="release-status" id="auth-status"></p></form>
+</div>
 
-  <div class="price-card">
-    <span class="badge">Your PAI account</span>
-    <h2>One login for everything PAI.</h2>
-    <div class="checks">
-      <span>Use the same account on the website and desktop app</span>
-      <span>Keep Founding Supporter status tied to your account</span>
-      <span>See your current access tier and benefits</span>
-      <span>Future Pro access will use the same account</span>
-    </div>
-  </div>
+<div class="price-card" data-reveal>
+<span class="badge">Connected access</span><h2>Your membership follows you.</h2><p class="account-card-copy">PAI accounts connect the website and desktop application without trusting the browser to grant itself access.</p>
+<div class="checks"><span>Use the same identity on the site and desktop app</span><span>Keep permanent Founding Supporter status attached to your account</span><span>See your current plan and access level</span><span>Future Pro access can use the same account</span></div>
+<div class="mini-terminal"><span class="ok">✓</span> Authentication handled by Supabase<br><span class="ok">✓</span> Entitlements stored server-side<br><span class="ok">✓</span> Payment details stay with PayPal</div>
+</div>
 </section>
 </main>
-<footer><div class="container footer"><span>© <span data-year></span> PAI.</span><div class="footer-links"><a href="pricing.html">Pricing</a><a href="docs.html">Docs</a></div></div></footer>
+
+<footer><div class="container footer"><div class="footer-brand"><a class="brand" href="index.html"><img src="assets/img/pai-mark.svg" alt="PAI"><span>PAI</span></a><p>An autonomous, local-first software development system built to turn requests into verified code.</p></div><div class="footer-col"><h4>Product</h4><a href="download.html">Download</a><a href="pricing.html">Pricing</a><a href="changelog.html">Changelog</a></div><div class="footer-col"><h4>Learn</h4><a href="docs.html">Documentation</a><a href="docs.html#projects">Projects</a><a href="docs.html#updates">Updates</a></div><div class="footer-col"><h4>Account</h4><a href="account.html">Sign in</a><a href="pricing.html">Founding Supporter</a></div></div><div class="container footer-bottom"><span>© <span data-year></span> PAI. All rights reserved.</span><span>Built for developers who want the work done, not just suggested.</span></div></footer>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><script src="assets/js/account.js"></script><script src="assets/js/site.js"></script></body></html>
