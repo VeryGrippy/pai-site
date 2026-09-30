@@ -108,7 +108,7 @@
         $("founder-checkout").disabled = true;
         $("founder-checkout").textContent = "Opening secure checkout…";
         try {
-          const response = await fetch("/api/create-founder-checkout", {
+          const response = await fetch("/api/create-founder-order", {
             method: "POST",
             headers: {
               Authorization: `Bearer ${current.access_token}`,
@@ -118,7 +118,7 @@
           });
           const data = await response.json();
           if (!response.ok) throw new Error(data.error || "Could not start checkout.");
-          window.location.href = data.url;
+          sessionStorage.setItem("pai_paypal_order_id", data.orderId || "");\n          window.location.href = data.url;
         } catch (error) {
           status(error.message || String(error));
           $("founder-checkout").disabled = false;
@@ -132,16 +132,32 @@
       await loadProfile(current);
 
       const params = new URLSearchParams(location.search);
-      if (params.get("founder") === "success") {
-        status("Payment completed. Confirming your permanent Founding Supporter status…");
-        if (current) {
-          for (let i = 0; i < 6; i++) {
-            await new Promise(resolve => setTimeout(resolve, 1000));
-            await loadProfile(current);
-            const { data } = await client.from("profiles").select("founding_supporter").eq("id", current.user.id).single();
-            if (data?.founding_supporter) {
-              status("Founding Supporter activated. Thank you for supporting PAI's development.");
-              break;
+      if (params.get("founder") === "paypal-return") {
+        if (!current) {
+          status("Sign in again to finish confirming your PayPal payment.");
+        } else {
+          const orderId = params.get("token") || sessionStorage.getItem("pai_paypal_order_id") || "";
+          if (!orderId) {
+            status("PayPal returned without an order ID. No entitlement was changed.");
+          } else {
+            status("Confirming your PayPal payment…");
+            try {
+              const captureRes = await fetch("/api/capture-founder-order", {
+                method: "POST",
+                headers: {
+                  Authorization: `Bearer ${current.access_token}`,
+                  "Content-Type": "application/json"
+                },
+                body: JSON.stringify({ orderId })
+              });
+              const capture = await captureRes.json();
+              if (!captureRes.ok) throw new Error(capture.error || "Could not confirm PayPal payment.");
+              sessionStorage.removeItem("pai_paypal_order_id");
+              await loadProfile(current);
+              status("Founding Supporter activated. Thank you for supporting PAI development.");
+              history.replaceState({}, "", location.pathname);
+            } catch (error) {
+              status(error.message || String(error));
             }
           }
         }
