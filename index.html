@@ -1,8 +1,76 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#090b10"><title>PAI — Build software from an idea</title><meta name="description" content="PAI is a local-first software development system that plans, builds, tests, repairs and verifies software."><link rel="icon" href="assets/img/pai-mark.svg"><link rel="stylesheet" href="assets/css/styles.css"></head><body>
-<div class="nav-wrap"><div class="container nav"><a class="brand" href="index.html"><img src="assets/img/pai-mark.svg" alt=""><span>PAI</span></a><nav class="nav-links"><a class="active" href="index.html">Home</a><a href="download.html">Download</a><a href="pricing.html">Pricing</a><a href="account.html">Account</a><a href="changelog.html">Changelog</a><a href="docs.html">Docs</a></nav><div class="nav-actions"><a class="btn ghost" href="docs.html">Docs</a><a class="btn primary" href="download.html">Download PAI</a></div></div></div>
-<main><section class="hero"><div class="container"><span class="eyebrow"><span class="dot"></span> PAI <span data-version></span> · Developer Alpha</span><h1>From idea to<br><span class="gradient">working software.</span></h1><p>PAI is a model-independent software development system that understands your project, writes the code, runs it, diagnoses failures, repairs problems, and verifies the result.</p><div class="hero-actions"><a class="btn primary" href="download.html">Download for Windows</a><a class="btn" href="docs.html">See how PAI works</a></div><div class="hero-meta">Local-first · Bring your own models · Windows 10/11</div>
-<div class="mockup"><div class="mockup-top"><span class="window-dot"></span><span class="window-dot"></span><span class="window-dot"></span></div><div class="mockup-body"><aside class="mock-sidebar"><div class="mock-label">PAI</div><div class="mock-nav"><span class="active">Chat</span><span>Code</span><span>Activity</span></div></aside><div class="mock-main"><div class="mock-label">Current task</div><div class="code-card"><span class="dim">// You asked PAI:</span><br><span class="p">Build a desktop inventory manager.</span><br><br><span class="g">✓</span> Understanding requirements<br><span class="g">✓</span> Planning project structure<br><span class="g">✓</span> Creating application files<br><span class="g">✓</span> Running build<br><span class="b">→</span> Testing and verification<br><br><span class="dim">PAI will repair failures before completion.</span></div></div><aside class="mock-right"><div class="mock-label">Project</div><p style="margin:0 0 6px;font-weight:700">Inventory Manager</p><p style="color:#727d8c;font-size:13px;margin-top:0">12 files · Python</p><div class="mock-label" style="margin-top:30px">Status</div><span class="badge">Verification running</span></aside></div></div>
+<!doctype html><html lang="en" data-release-channel="developer"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#06070a"><title>PAI — Autonomous software development</title><meta name="description" content="PAI is a local-first autonomous software development system that understands projects, writes code, tests, repairs failures, and verifies results."><link rel="icon" href="assets/img/pai-mark.svg"><link rel="stylesheet" href="assets/css/styles.css"></head><body>
+<div class="nav-wrap"><div class="container nav">
+<a class="brand" href="index.html"><img src="assets/img/pai-mark.svg" alt="PAI"><span>PAI</span></a>
+<nav class="nav-links" id="site-nav">
+<a class="active" href="index.html">Home</a>
+<a href="download.html">Download</a>
+<a href="pricing.html">Pricing</a>
+<a href="docs.html">Docs</a>
+<a href="changelog.html">Changelog</a>
+</nav>
+<div class="nav-actions"><a class="btn ghost" href="account.html">Account</a><a class="btn primary" href="download.html">Download PAI</a><button class="mobile-toggle" type="button" aria-label="Toggle navigation" aria-controls="site-nav" aria-expanded="false"><span></span><span></span><span></span></button></div>
+</div></div>
+<main>
+<div class="announcement"><span class="pill">Alpha</span><strong>PAI <span data-version>6.9</span></strong><span>Native PAI-Coder · automatic runtime setup · CUDA acceleration</span></div>
+<section class="hero"><div class="container hero-grid">
+<div class="hero-copy" data-reveal>
+<span class="kicker">Autonomous software development</span>
+<h1>Describe the goal.<br><span class="gradient-text">PAI builds the rest.</span></h1>
+<p>PAI is built to do more than generate snippets. It understands the project, plans the work, changes the right files, runs the software, diagnoses failures, repairs them, and verifies what it finished.</p>
+<div class="hero-actions"><a class="btn primary large" href="download.html">Download for Windows</a><a class="btn large" href="#how-it-works">See how it works</a></div>
+<div class="hero-meta"><span>Local-first</span><span>Native PAI-Coder</span><span>Windows 10/11</span><span>Active development</span></div>
+</div>
+<div class="product-stage" data-reveal>
+<div class="app-window">
+<div class="app-top"><div class="window-dots"><span class="window-dot"></span><span class="window-dot"></span><span class="window-dot"></span></div><div class="app-title">PAI · Workspace</div></div>
+<div class="app-body"><aside class="app-side"><div class="mini-brand">Workspace</div><div class="app-nav"><span class="active">Code</span><span>Chat</span><span>Logs</span><span>Settings</span></div></aside>
+<div class="app-main"><div class="task-header"><div><span class="kicker">Current task</span><h3>Upgrade the authentication system</h3></div><span class="status-chip">Working</span></div>
+<div class="prompt-box">“Add account sessions, protect entitlement writes, and verify the full login flow.”</div>
+<div class="progress-list">
+<div class="progress-row"><span class="progress-icon">✓</span><span>Mapped project contracts</span><small>done</small></div>
+<div class="progress-row"><span class="progress-icon">✓</span><span>Updated authentication flow</span><small>done</small></div>
+<div class="progress-row"><span class="progress-icon">✓</span><span>Protected server entitlements</span><small>done</small></div>
+<div class="progress-row active"><span class="progress-icon">→</span><span>Running verification</span><small>active</small></div>
+</div>
+<div class="verify-card"><strong>Verification gate</strong>PAI checks requirements, build output, tests, and cross-file behavior before marking work complete.</div>
+</div></div></div>
+<div class="float-card one"><strong>Project aware</strong>Reads the system before editing it.</div>
+<div class="float-card two"><strong>Repair loop</strong>Failures become evidence, not guesses.</div>
+</div>
 </div></section>
-<section class="section"><div class="container"><div class="section-head"><h2>PAI owns the process, not just the prompt.</h2><p>The goal is simple: give PAI an idea, broken code, or an existing project and let it handle the path to a verified result.</p></div><div class="grid-3"><div class="card"><div class="icon">01</div><h3>Understand & plan</h3><p>PAI maps the project, identifies the languages and frameworks, and turns your request into concrete requirements before editing.</p></div><div class="card"><div class="icon">02</div><h3>Build & repair</h3><p>It creates or edits the right files, runs the project, reads real failures, and repairs problems instead of guessing that the code works.</p></div><div class="card"><div class="icon">03</div><h3>Verify & finish</h3><p>Compiler results, tests, requirements, and cross-file contracts become evidence that the requested work is actually complete.</p></div></div></div></section>
-<section class="section"><div class="container"><div class="cta"><div><h2>PAI is free during active development.</h2><p>Founding Supporter is a temporary $5 one-time option for people who want to directly support PAI's development. Pro is still being defined and is not for sale yet.</p></div><a class="btn primary" href="pricing.html">See plans</a></div></div></section></main>
-<footer><div class="container footer"><span>© <span data-year></span> PAI. All rights reserved.</span><div class="footer-links"><a href="download.html">Download</a><a href="docs.html">Docs</a><a href="changelog.html">Changelog</a></div></div></footer><script src="assets/js/site.js"></script></body></html>
+
+<div class="logo-strip"><div class="container logo-strip-inner"><span class="logo-strip-label">Built around the whole development loop</span><div class="signal-list"><span>Understand</span><span>Plan</span><span>Edit</span><span>Run</span><span>Repair</span><span>Verify</span></div></div></div>
+
+<section class="section" id="how-it-works"><div class="container">
+<div class="section-head centered" data-reveal><span class="kicker">The difference</span><h2>AI that works on the project,<br>not beside it.</h2><p>The target is a coding system you can hand real work to—not a chat box that stops at “here’s some code.”</p></div>
+<div class="workflow-grid">
+<article class="workflow-card" data-step="01" data-reveal><div class="step-icon">01</div><h3>Understand before changing</h3><p>PAI maps the project, languages, frameworks, requirements, dependencies, and cross-file contracts before deciding what needs to move.</p></article>
+<article class="workflow-card" data-step="02" data-reveal><div class="step-icon">02</div><h3>Make the work real</h3><p>It creates and edits files, follows the project’s existing structure, and keeps the requested scope connected to actual implementation.</p></article>
+<article class="workflow-card" data-step="03" data-reveal><div class="step-icon">03</div><h3>Prove the result</h3><p>Builds, tests, deterministic checks, and repair passes give PAI evidence that the request is complete before it calls the task finished.</p></article>
+</div></div></section>
+
+<section class="section compact"><div class="container">
+<div class="section-head" data-reveal><span class="kicker">Built for serious work</span><h2>One system. The whole job.</h2><p>PAI combines project understanding, coding, verification, local model execution, and recovery into one desktop workflow.</p></div>
+<div class="bento">
+<article class="bento-card large" data-reveal><span class="feature-tag">Autonomous coding</span><h3>Give PAI a goal, not a file-by-file checklist.</h3><p>PAI is designed to determine which files matter, preserve surrounding behavior, make bounded changes, and keep moving until the work reaches a verified outcome.</p><div class="mini-terminal"><span class="dim">$ pai task run</span><br><span class="ok">✓</span> 18 files mapped<br><span class="ok">✓</span> 6 requirements compiled<br><span class="ok">✓</span> 4 files updated<br><span class="run">→</span> verification pass 2/3</div></article>
+<article class="bento-card medium" data-reveal><span class="feature-tag">Local-first runtime</span><h3>Your coding model can run on your machine.</h3><p>PAI-Coder ships as a native local runtime with CPU fallback and CUDA acceleration where supported, reducing setup friction and keeping local development local.</p><div class="metric-row"><div class="metric"><strong>Native</strong><span>runtime</span></div><div class="metric"><strong>CUDA</strong><span>acceleration</span></div><div class="metric"><strong>CPU</strong><span>fallback</span></div></div></article>
+<article class="bento-card half" data-reveal><span class="feature-tag">Verification</span><h3>“Looks right” is not a completion condition.</h3><p>PAI uses compiler output, tests, runtime evidence, requirement checks, and project contracts to decide whether a change can actually be accepted.</p></article>
+<article class="bento-card half" data-reveal><span class="feature-tag">Recovery</span><h3>Autonomy without careless destruction.</h3><p>Checkpointing, bounded repair, update rollback, preserved originals, and explicit outcome states are part of the architecture—not cleanup added later.</p></article>
+</div></div></section>
+
+<section class="section"><div class="container"><div class="architecture" data-reveal>
+<div><span class="kicker">PAI architecture</span><h2>The model is a worker.<br>PAI is the system.</h2><p>PAI is designed to stay model-independent. The application owns project understanding, planning, editing, execution, verification, recovery, and the user experience while coding models do the language work inside that system.</p><div class="hero-actions"><a class="btn" href="docs.html">Explore the architecture</a></div></div>
+<div class="stack"><div class="stack-row"><strong>Request + project context</strong><span class="state">understood</span></div><div class="stack-row"><strong>Requirements + plan</strong><span class="state">compiled</span></div><div class="stack-row"><strong>PAI-Coder / provider</strong><span>worker</span></div><div class="stack-row"><strong>Build + runtime evidence</strong><span class="state">verified</span></div><div class="stack-row"><strong>Outcome</strong><span class="state">edit · keep · advise</span></div></div>
+</div></div></section>
+
+<section class="section compact"><div class="container"><div class="release-banner" data-reveal><div><span class="kicker">Current developer release</span><h3>PAI <span data-version>6.9.0-alpha.7</span></h3><p data-release-notes>Native PAI-Coder, automatic first-run model/runtime setup, CUDA acceleration, neural voice, and desktop fixes.</p><p class="release-status" data-release-status>Checking current release…</p></div><a class="btn primary large" data-download href="download.html">Get PAI</a></div></div></section>
+
+<section class="section"><div class="container"><div class="cta" data-reveal><div><span class="kicker">Start building</span><h2>PAI is free during active development.</h2><p>Install the current developer alpha, put it on a real project, and see what happens when the AI is responsible for the development loop instead of a single answer.</p></div><div class="hero-actions"><a class="btn primary large" href="download.html">Download PAI</a><a class="btn large" href="pricing.html">View access</a></div></div></div></section>
+</main>
+<footer><div class="container footer">
+<div class="footer-brand"><a class="brand" href="index.html"><img src="assets/img/pai-mark.svg" alt="PAI"><span>PAI</span></a><p>An autonomous, local-first software development system built to turn requests into verified code.</p></div>
+<div class="footer-col"><h4>Product</h4><a href="download.html">Download</a><a href="pricing.html">Pricing</a><a href="changelog.html">Changelog</a></div>
+<div class="footer-col"><h4>Learn</h4><a href="docs.html">Documentation</a><a href="docs.html#projects">Projects</a><a href="docs.html#updates">Updates</a></div>
+<div class="footer-col"><h4>Account</h4><a href="account.html">Sign in</a><a href="pricing.html">Founding Supporter</a></div>
+</div><div class="container footer-bottom"><span>© <span data-year></span> PAI. All rights reserved.</span><span>Built for developers who want the work done, not just suggested.</span></div></footer>
+<script src="assets/js/site.js"></script></body></html>
