@@ -7,7 +7,24 @@
   const $ = id => document.getElementById(id);
   const status = message => {
     if ($("auth-status")) $("auth-status").textContent = message || "";
+    if ($("account-status")) $("account-status").textContent = message || "";
   };
+
+  function showSignedOut() {
+    $("signed-out-view").hidden = false;
+    $("signed-in-view").hidden = true;
+    $("account-hero-title").textContent = "Sign in to PAI.";
+    $("account-hero-copy").textContent = "Your PAI account keeps your access, plan, and Founding Supporter status connected across the website and desktop app.";
+  }
+
+  function showSignedIn(session) {
+    $("signed-out-view").hidden = true;
+    $("signed-in-view").hidden = false;
+    $("account-hero-title").textContent = "Your PAI account.";
+    $("account-hero-copy").textContent = "Manage your access, membership status, and Founding Supporter benefits.";
+    $("account-email").textContent = session.user.email || "";
+    $("detail-email").textContent = session.user.email || "—";
+  }
 
   function setMode(next) {
     mode = next;
@@ -20,17 +37,12 @@
 
   async function loadProfile(session, retries = 0) {
     if (!session?.user) {
-      $("account-title").textContent = "Not signed in";
-      $("account-email").textContent = "Sign in to view your PAI access.";
-      $("entitlements").innerHTML = "<span>Free access</span>";
+      showSignedOut();
       $("founder-checkout").hidden = true;
-      $("signout").hidden = true;
       return;
     }
 
-    $("account-title").textContent = "PAI Account";
-    $("account-email").textContent = session.user.email || "";
-    $("signout").hidden = false;
+    showSignedIn(session);
 
     const { data, error } = await client
       .from("profiles")
@@ -50,20 +62,41 @@
 
     const plan = data?.plan === "pro" ? "Pro" : "Free";
     const founder = Boolean(data?.founding_supporter);
-    $("entitlements").innerHTML = [
-      `<span>Plan: ${plan}</span>`,
-      founder
-        ? "<span>Founding Supporter: permanent</span>"
-        : "<span>Founding Supporter: not active</span>"
-    ].join("");
+
+    $("detail-plan").textContent = plan;
+    $("detail-founder").textContent = founder ? "Permanent" : "Not active";
+    $("detail-usage").textContent = plan === "Pro" ? "Highest" : (founder ? "Higher" : "Standard");
+    $("account-badge").textContent = founder ? "FOUNDING SUPPORTER" : plan.toUpperCase();
+
+    const founderCard = $("founder-card");
+    const founderCopy = $("founder-copy");
+    const entitlements = $("entitlements");
+
+    if (founder) {
+      founderCard.classList.add("is-founder");
+      founderCopy.textContent = "Your Founding Supporter status is permanently attached to this PAI account. Thank you for supporting PAI during active development.";
+      entitlements.innerHTML = [
+        "<span>Permanent Founding Supporter recognition</span>",
+        "<span>Higher usage limits than Free</span>",
+        "<span>Advanced features and early previews</span>",
+        "<span>Priority feedback and testing access</span>"
+      ].join("");
+    } else {
+      founderCard.classList.remove("is-founder");
+      founderCopy.textContent = "A one-time $5 contribution directly supports continued PAI development and permanently adds Founding Supporter status to your account.";
+      entitlements.innerHTML = [
+        "<span>Permanent Founding Supporter recognition</span>",
+        "<span>Higher usage limits than Free</span>",
+        "<span>Advanced features and early previews</span>",
+        "<span>Priority feedback and testing access</span>"
+      ].join("");
+    }
 
     const offerOpen = Date.now() < Date.parse(cutoff);
     $("founder-checkout").hidden = founder || !offerOpen;
+
     if (!offerOpen && !founder) {
-      $("entitlements").insertAdjacentHTML(
-        "beforeend",
-        "<span>Founding Supporter offer ended</span>"
-      );
+      founderCopy.textContent = "The Founding Supporter offer has ended.";
     }
   }
 
