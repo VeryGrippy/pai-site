@@ -7,7 +7,7 @@ create table if not exists public.profiles (
   plan text not null default 'free' check (plan in ('free','pro')),
   founding_supporter boolean not null default false,
   founding_supporter_purchased_at timestamptz,
-  stripe_customer_id text,
+  paypal_payer_id text,
   pro_subscription_status text,
   created_at timestamptz not null default now(),
   updated_at timestamptz not null default now()
@@ -15,7 +15,8 @@ create table if not exists public.profiles (
 
 create table if not exists public.payment_events (
   id bigint generated always as identity primary key,
-  stripe_event_id text not null unique,
+  payment_event_id text not null unique,
+  provider text not null default 'paypal',
   event_type text not null,
   created_at timestamptz not null default now()
 );
@@ -30,7 +31,7 @@ to authenticated
 using (auth.uid() = id);
 
 -- Browser clients never write plan/entitlement fields. Those are updated only
--- by the trusted Stripe webhook through the Supabase service-role key.
+-- by the trusted payment backend through the Supabase service-role key.
 
 create or replace function public.handle_new_pai_user()
 returns trigger
