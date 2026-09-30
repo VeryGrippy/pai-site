@@ -115,3 +115,12 @@ footer { border-top:1px solid var(--line); margin-top:80px; }.footer{display:fle
 .support-note h2{margin:14px 0 8px;font-size:30px;letter-spacing:-.03em}
 .support-note p{margin:0;color:var(--muted)}
 @media (max-width: 980px){.pricing.pricing-3{grid-template-columns:1fr}}
+
+.account-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:start}
+.account-tabs{display:flex;gap:10px;margin:18px 0}
+#auth-form{display:grid;gap:10px}
+#auth-form label{font-size:13px;color:#c5ccd7;font-weight:700}
+.account-input{width:100%;min-height:46px;border-radius:12px;border:1px solid var(--line);background:#0b0f16;color:var(--text);padding:0 14px;font:inherit;outline:none}
+.account-input:focus{border-color:rgba(139,92,246,.55);box-shadow:0 0 0 3px rgba(139,92,246,.08)}
+#founder-checkout,#signout{margin-top:12px}
+@media (max-width:860px){.account-grid{grid-template-columns:1fr}}
