@@ -3,10 +3,10 @@
 PAI's account/payment wiring is split into three trusted parts:
 
 - **Supabase** owns user authentication and the account/profile database.
-- **Stripe** owns payment collection.
-- **The PAI website backend** creates Stripe Checkout sessions and accepts verified Stripe webhooks.
+- **PayPal** owns payment collection.
+- **The PAI website backend** creates PayPal orders, captures completed payments, verifies the account/order relationship, and grants entitlements.
 
-The browser and PAI desktop app never receive the Supabase service-role key or Stripe secret key.
+The browser and PAI desktop app never receive the Supabase service-role key or PayPal client secret.
 
 ## 1. Supabase
 
@@ -34,37 +34,44 @@ Configure these on the serverless website host:
 SUPABASE_URL=
 SUPABASE_ANON_KEY=
 SUPABASE_SERVICE_ROLE_KEY=
-STRIPE_SECRET_KEY=
-STRIPE_WEBHOOK_SECRET=
+PAYPAL_CLIENT_ID=
+PAYPAL_CLIENT_SECRET=
+PAYPAL_ENV=live
 PUBLIC_SITE_URL=
 FOUNDER_CUTOFF=2027-01-02T00:00:00Z
 ```
 
+Use `PAYPAL_ENV=sandbox` for testing and `PAYPAL_ENV=live` for real payments.
+
 Only `SUPABASE_URL` and `SUPABASE_ANON_KEY` are safe to expose publicly.
 
-## 3. Stripe webhook
+## 3. PayPal flow
 
-Create a Stripe webhook endpoint pointing to:
-
-```
-https://YOUR_SITE/api/stripe-webhook
-```
-
-Subscribe at minimum to:
+The website calls:
 
 ```
-checkout.session.completed
+POST /api/create-founder-order
 ```
 
-Copy its signing secret into `STRIPE_WEBHOOK_SECRET`.
+The backend creates a $5 USD PayPal order tied to the signed-in PAI user ID.
 
-The webhook verifies Stripe's signature before changing entitlements. A successful paid Founding Supporter checkout permanently sets:
+After the buyer approves the payment on PayPal, PayPal returns them to the PAI account page. The website then calls:
 
 ```
-founding_supporter = true
+POST /api/capture-founder-order
 ```
 
-The webhook also records Stripe event IDs so retries are idempotent.
+The backend:
+
+- verifies the user's PAI session
+- captures or retrieves the PayPal order
+- confirms the PayPal order belongs to that PAI user
+- confirms the payment is exactly $5.00 USD
+- confirms the payment is completed
+- records the payment event idempotently
+- permanently sets `founding_supporter = true`
+
+The client does not grant its own entitlement.
 
 ## 4. Public desktop configuration
 
