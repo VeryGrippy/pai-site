@@ -124,3 +124,16 @@ footer { border-top:1px solid var(--line); margin-top:80px; }.footer{display:fle
 .account-input:focus{border-color:rgba(139,92,246,.55);box-shadow:0 0 0 3px rgba(139,92,246,.08)}
 #founder-checkout,#signout{margin-top:12px}
 @media (max-width:860px){.account-grid{grid-template-columns:1fr}}
+
+.account-card-copy{color:var(--muted);margin:0 0 18px}
+.account-dashboard{display:grid;gap:20px}
+.account-dashboard-head{display:flex;align-items:flex-start;justify-content:space-between;gap:20px;padding:26px 0 6px}
+.account-dashboard-head h2{font-size:34px;letter-spacing:-.03em;margin:12px 0 4px}
+.account-dashboard-grid{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:20px}
+.account-section-title{font-size:24px;margin:14px 0 8px}
+.account-detail-list{display:grid;margin-top:20px;border-top:1px solid var(--line)}
+.account-detail-list>div{display:flex;justify-content:space-between;gap:24px;padding:15px 0;border-bottom:1px solid var(--line)}
+.account-detail-list span{color:var(--muted);font-size:14px}
+.account-detail-list strong{text-align:right}
+#founder-card.is-founder{border-color:rgba(52,211,153,.28);box-shadow:0 0 50px rgba(52,211,153,.06)}
+@media (max-width:860px){.account-dashboard-grid{grid-template-columns:1fr}.account-dashboard-head{flex-direction:column}}
