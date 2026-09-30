@@ -1,0 +1,7 @@
+{
+  "supabaseUrl": "https://brwbmprzwlzicnunguxf.supabase.co",
+  "supabaseAnonKey": "PASTE_YOUR_SUPABASE_PUBLISHABLE_KEY_HERE",
+  "edgeFunctionBase": "https://brwbmprzwlzicnunguxf.supabase.co/functions/v1",
+  "accountUrl": "https://verygrippy.github.io/pai-site/account.html",
+  "foundingSupporterCutoff": "2027-01-02T00:00:00Z"
+}
