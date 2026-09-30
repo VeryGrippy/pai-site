@@ -32,6 +32,19 @@ export default async function handler(req, res) {
 
   try {
     const user = await getSupabaseUser(token);
+
+    const cfgUrl = process.env.SUPABASE_URL;
+    const anon = process.env.SUPABASE_ANON_KEY;
+    const profileRes = await fetch(
+      `${cfgUrl}/rest/v1/profiles?select=founding_supporter&id=eq.${user.id}&limit=1`,
+      { headers: { apikey: anon, Authorization: `Bearer ${token}` } }
+    );
+    if (!profileRes.ok) throw new Error("Could not verify current PAI account status.");
+    const profiles = await profileRes.json();
+    if (profiles?.[0]?.founding_supporter) {
+      return res.status(409).json({ error: "This account is already a Founding Supporter." });
+    }
+
     const params = new URLSearchParams();
     params.set("mode", "payment");
     params.set("customer_email", user.email || "");
