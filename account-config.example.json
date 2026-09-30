@@ -1,0 +1,5 @@
+{
+  "supabase_url": "https://YOUR_PROJECT.supabase.co",
+  "supabase_anon_key": "YOUR_PUBLIC_ANON_KEY",
+  "account_url": "https://YOUR_PUBLIC_SITE/account.html"
+}
