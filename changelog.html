@@ -5,11 +5,91 @@
 <section class="page-hero"><span class="kicker">Product history</span><h1>PAI is moving fast.</h1><p>The changelog tracks major product milestones rather than every internal patch. The desktop app should surface the newest update first and keep the full history available here.</p></section>
 <section class="release-banner" data-reveal><div><span class="kicker">Current developer release</span><h3>PAI <span data-version>6.9.0-alpha.7</span></h3><p data-release-notes>Native PAI-Coder, automatic first-run model/runtime setup, CUDA acceleration, neural voice, and desktop fixes.</p><p class="release-status" data-release-status>Checking current release…</p></div><a class="btn primary" href="download.html">Download current build</a></section>
 <section class="section compact"><div class="changelog">
-<article class="release" data-reveal><span class="badge">Current generation</span><h3>6.9 — Native PAI-Coder & distribution</h3><time>September 2026</time><ul><li>Native PAI-Coder runtime integrated into the desktop application.</li><li>Automatic first-run model and runtime acquisition architecture.</li><li>CUDA acceleration with CPU fallback.</li><li>Windows installer and launcher distribution flow.</li><li>Developer, Beta, and Stable update channel architecture.</li><li>Verified update packages, staging, restart validation, and rollback foundations.</li><li>Public release metadata driven by live manifests.</li></ul></article>
-<article class="release" data-reveal><h3>6.4 — Application experience redesign</h3><time>September 2026</time><ul><li>Visible branding simplified to PAI.</li><li>Projects open directly into the Code workspace.</li><li>Chat, Code, and Logs established as the primary application surfaces.</li><li>Secondary controls consolidated into Settings and contextual UI.</li><li>Editor-style Find replaces a permanent Search destination.</li><li>Startup focuses on the newest release note instead of dumping full history.</li></ul></article>
-<article class="release" data-reveal><h3>6.4 Alpha 4 — Controls, models & recovery</h3><time>September 2026</time><ul><li>Local model discovery and explicit runtime controls.</li><li>Pause, resume, cancel, and recovery integration.</li><li>Stronger updater handoff and application settings.</li></ul></article>
-<article class="release" data-reveal><h3>6.3 — Universal coding core</h3><time>September 2026</time><ul><li>Project, language, framework, and build detection.</li><li>Language-neutral coding adapters across multiple ecosystems.</li><li>Cross-file and domain-integrity foundations.</li></ul></article>
-<article class="release" data-reveal><h3>5.x — Autonomy & application foundations</h3><time>2026</time><ul><li>Background-work architecture and task queues.</li><li>Checkpointed autonomous work and protected originals.</li><li>Chat, Code/Workspace, and technical Logs application model.</li><li>Voice and runtime identity foundations.</li></ul></article>
+<article class="release" data-reveal><span class="badge">Current generation</span><h3>6.9 — Distribution, Accounts & Tester Delivery</h3><time>September 2026</time><ul>
+<li>Completed the native Windows installer and updater path so PAI can be distributed as a normal desktop application.</li>
+<li>Added Developer, Beta, and Stable update-channel architecture with verified packages, staged installation, startup health checks, rollback foundations, and repair support.</li>
+<li>Moved PAI-Coder toward zero-touch first-run setup with native local runtime acquisition, CUDA acceleration when supported, and CPU fallback.</li>
+<li>Added visible first-run PAI-Coder download percentage and downloaded/total size progress.</li>
+<li>Replaced the normal Local Mode path with Supabase-backed PAI account sign-in and secure saved-session restoration.</li>
+<li>Added Free, Founding Supporter, and Pro entitlement mapping to the desktop application.</li>
+<li>Hardened CI around account, entitlement, installer, dependency, frozen-executable, and release changes.</li>
+</ul></article>
+
+<article class="release" data-reveal><h3>6.8 — Conversational Voice & Continuity</h3><time>2026</time><ul>
+<li>Added provider-independent duplex voice-session architecture with natural turn endpointing.</li>
+<li>Added barge-in/interruption handling, streaming speech chunking, and echo-suppression guards.</li>
+<li>Added bounded persistent voice-turn continuity while keeping push-to-talk available as a fallback.</li>
+<li>Connected conversational voice to the semantic intent and continuity systems built in the previous generation.</li>
+</ul></article>
+
+<article class="release" data-reveal><h3>6.7 — Fluent Intent & Natural-Language Control</h3><time>2026</time><ul>
+<li>Introduced a model-independent semantic-provider interface with strict structured validation.</li>
+<li>Added an authoritative requirement ledger for hard requirements, preferences, preservation rules, rejected ideas, replacements, assumptions, and revisions.</li>
+<li>Improved conversational revisions and ambiguity handling so PAI asks for clarification only when execution meaning is genuinely unresolved.</li>
+<li>Added natural-language control over automation tasks while preserving deterministic safety.</li>
+</ul></article>
+
+<article class="release" data-reveal><h3>6.6 — Persistent Automation & Background Autonomy</h3><time>2026</time><ul>
+<li>Added a durable project-aware automation queue instead of relying only on ad-hoc background folders.</li>
+<li>Introduced read-only, safe-review, low-risk auto-apply, and checkpointed-autonomous task levels.</li>
+<li>Added external task intake, source preservation, task priority, duplicate/cooldown protection, and persistent logs.</li>
+<li>Added pause, resume, cancel, restart recovery, and unattended sequential work while keeping completion authority with verification evidence.</li>
+</ul></article>
+
+<article class="release" data-reveal><h3>6.5 — Verifier-Owned Execution & Causal Completion</h3><time>2026</time><ul>
+<li>Formalized the model-independent Input → Understand → Plan → Code → Test → Diagnose → Repair → Verify → Finished pipeline.</li>
+<li>Separated technical project health from proof that the user's actual request was satisfied.</li>
+<li>Added objective requirement contracts and before/after acceptance evidence to block false completion and unrelated edits.</li>
+<li>Strengthened bounded repair so failures become targeted repair evidence instead of permission for blind rewrites.</li>
+<li>Validated the system against a synthetic 1,783-file multi-language project with multiple deliberate repair failures before final acceptance.</li>
+</ul></article>
+
+<article class="release" data-reveal><h3>6.4 — Application Completion & Desktop Simplification</h3><time>2026</time><ul>
+<li>Added persistent application state, recent projects, project sessions, startup-health tracking, cancellable background tasks, friendly error handling, and runtime diagnostics.</li>
+<li>Simplified visible branding to PAI and consolidated navigation around the primary Chat, Code/Workspace, and Activity/Logs surfaces.</li>
+<li>Moved secondary controls into Settings and changed project search into an editor-style find workflow.</li>
+<li>Added local model management, pause/resume/cancel controls, rollback handoff, window-mode persistence, and stronger Windows release gates.</li>
+</ul></article>
+
+<article class="release" data-reveal><h3>6.3 — Universal Coding Core</h3><time>2026</time><ul>
+<li>Added language-agnostic project scanning and a persistent project-map API.</li>
+<li>Added mixed-language, framework, build-system, manifest, entry-point, and dependency detection.</li>
+<li>Introduced adapters for Python, C, C++, C#, Java, JavaScript, TypeScript, Lua, GLua, HTML/CSS, and config/data files.</li>
+<li>Kept specialized GLua semantics isolated behind an adapter instead of making Garry's Mod assumptions universal.</li>
+</ul></article>
+
+<article class="release" data-reveal><h3>6.0–6.2 — Native Application & Windows Distribution Foundation</h3><time>2026</time><ul>
+<li>Separated replaceable application/runtime files from mutable user data so updates could not overwrite projects and settings.</li>
+<li>Built the native Windows packaging path for PAI.exe, PAIUpdater.exe, PAISetup.exe, update ZIPs, hashes, and release manifests.</li>
+<li>Reduced UI contention during large builds with batched live-code updates and lower-frequency background polling.</li>
+<li>Added updater states, package verification, Windows-path hardening, and model/runtime guards that later releases built on.</li>
+</ul></article>
+
+<article class="release" data-reveal><h3>5.0 — Persistent Desktop Workbench</h3><time>2026</time><ul>
+<li>Preserved the proven autonomous engine while adding persistent workspace, session, task, and recent-project state.</li>
+<li>Expanded the editor-first desktop with project tree, tabs, breadcrumbs, split editing, Problems, Search, Output, Terminal, References, Git, Build, and Preview surfaces.</li>
+<li>Added durable queued/working/review/done/blocked/cancelled task states and structured activity history.</li>
+<li>Added conservative cross-module engineering intelligence while retaining semantic verification, checkpoints, background autonomy, and forensic logs.</li>
+<li>Redesigned the desktop identity around a clearer Code/Assistant/Activity workflow and laid the foundation for voice and runtime identity.</li>
+</ul></article>
+
+<article class="release" data-reveal><h3>4.0 — Autonomous Project Builder</h3><time>2026</time><ul>
+<li>Moved project requests from approval-heavy execution to automatic multi-phase autonomous builds.</li>
+<li>Added filesystem truth gates so PAI could not report success when planned files were missing or empty.</li>
+<li>Added validated native ZIP artifacts and rejected empty or invalid packages.</li>
+<li>Introduced Background Autopilot with isolated working copies, source preservation, completed/failed queues, and automatic verification.</li>
+<li>Hardened completion into FILE VERIFIED → PHASE VERIFIED → REQUIREMENTS VERIFIED → PROJECT VERIFIED → PACKAGE VERIFIED → DONE.</li>
+<li>Added requirement ledgers, artifact truth, dependency graphs, adversarial review, and stronger project-level integrity checks.</li>
+</ul></article>
+
+<article class="release" data-reveal><h3>3.x — Reliable Coding Agent</h3><time>2026</time><ul>
+<li>Established bounded, targeted project editing instead of unsafe blind whole-file rewrites.</li>
+<li>Added persistent edit receipts, diff-grounded follow-up explanations, and authoritative verification-driven terminal states.</li>
+<li>Introduced assessment-first improvement work with EDIT, KEEP, and ADVISE outcomes instead of forcing every review into a code change.</li>
+<li>Added no-op detection, malformed-edit recovery, canonical symbol identity recovery, and evidence-preserving repair restricted to failed targets.</li>
+<li>Expanded runtime-aware semantic verification, project-defined API provenance, GLua realm/network ownership, and cross-file contract checks.</li>
+<li>Consolidated the reliable-agent loop around UNDERSTAND → DECIDE SCOPE → MODIFY/CREATE → VERIFY → REPAIR → REVERIFY.</li>
+</ul></article>
 </div></section>
 </main>
 <footer><div class="container footer"><div class="footer-brand"><a class="brand" href="index.html"><img src="assets/img/pai-mark.svg" alt="PAI"><span>PAI</span></a><p>An autonomous, local-first software development system built to turn requests into verified code.</p></div><div class="footer-col"><h4>Product</h4><a href="download.html">Download</a><a href="pricing.html">Pricing</a><a href="changelog.html">Changelog</a></div><div class="footer-col"><h4>Learn</h4><a href="https://discord.gg/caHGyXsV8p" target="_blank" rel="noopener noreferrer">Discord</a><a href="docs.html">Documentation</a><a href="docs.html#projects">Projects</a><a href="docs.html#updates">Updates</a></div><div class="footer-col"><h4>Account</h4><a href="account.html">Sign in</a><a href="pricing.html">Founding Supporter</a></div></div><div class="container footer-bottom"><span>© <span data-year></span> PAI. All rights reserved.</span><span>Built for developers who want the work done, not just suggested.</span></div></footer>
