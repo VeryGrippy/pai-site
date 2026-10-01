@@ -76,7 +76,7 @@ async function loadRelease() {
     setStatus(`Current ${channelLabel} · ${manifest.version}`, "ready");
   } catch (error) {
     console.error("PAI release lookup failed:", error);
-    setText("[data-version]", "6.9.0-alpha.7");
+    setText("[data-version]", "6.9.0-alpha.8");
     setStatus("Live release lookup unavailable; showing the latest published alpha information.", "warning");
   }
 }
