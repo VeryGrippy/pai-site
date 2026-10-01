@@ -1,10 +1,10 @@
 {
-  "required": false,
-  "installer_url": "https://verygrippy.github.io/pai-site/developer/PAISetup-6.9.0-alpha.7.exe",
-  "release_notes": "PAI 6.9 Alpha 7: native PAI-Coder, automatic first-run model/runtime setup, CUDA acceleration, neural voice, and desktop fixes.",
-  "version": "6.9.0-alpha.7",
-  "channel": "developer",
-  "sha256": "65c312c9007b1f48a7eaaab5052381801a494c0e920097039053dd658af4e157",
   "updater_minimum": "6.0.0-alpha.3",
-  "package_url": "https://verygrippy.github.io/pai-site/developer/PAI-6.9.0-alpha.7-windows-x64.zip"
+  "channel": "developer",
+  "version": "6.9.0-alpha.8",
+  "installer_url": "https://verygrippy.github.io/pai-site/developer/PAISetup-6.9.0-alpha.8.exe",
+  "release_notes": "PAI 6.9 Alpha 8: account-backed sign-in, zero-touch tester install, visible PAI-Coder first-run progress, CUDA acceleration, neural voice, and distribution hardening.",
+  "required": false,
+  "sha256": "7ca3ad004f954b89d9132dee4bed70eb095e16f8f8f0513b34fee71f7810d8cf",
+  "package_url": "https://verygrippy.github.io/pai-site/developer/PAI-6.9.0-alpha.8-windows-x64.zip"
 }
